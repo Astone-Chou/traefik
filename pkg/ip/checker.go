@@ -27,7 +27,7 @@ func NewChecker(trustedIPs []string) (*Checker, error) {
 		} else {
 			_, ipAddr, err := net.ParseCIDR(ipMask)
 			if err != nil {
-				return nil, fmt.Errorf("parsing CIDR trusted IPs %s: %v", ipAddr, err)
+				return nil, fmt.Errorf("parsing CIDR trusted IPs %s: %v", ipMask, err)
 			}
 			checker.authorizedIPsNet = append(checker.authorizedIPsNet, ipAddr)
 		}
